@@ -21,12 +21,13 @@ class KlantenVertellenWrapper
     /**
      * ApiWrapper constructor.
      *
-     * @param  \KingsCode\KlantenVertellen\Config\Repository $repository
+     * @param  \KingsCode\KlantenVertellen\API\GetReviews   $reviewGetter
+     * @param  \KingsCode\KlantenVertellen\API\ReviewInvite $reviewInviter
      */
-    public function __construct(Repository $repository)
+    public function __construct(GetReviews $reviewGetter, ReviewInvite $reviewInviter)
     {
-        $this->reviewGetter = new GetReviews($repository);
-        $this->reviewInviter = new ReviewInvite($repository);
+        $this->reviewGetter = $reviewGetter;//new GetReviews($repository);
+        $this->reviewInviter = $reviewInviter;//new ReviewInvite($repository);
     }
 
     /**

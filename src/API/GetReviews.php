@@ -59,9 +59,9 @@ class GetReviews
      * @param  int $maxReviews
      * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
      */
-    private function getReviews(int $maxReviews = 0): ProfileModel
+    public function getReviews(int $maxReviews = 0): ProfileModel
     {
-        return $this->load(null, null, $maxReviews);
+        return $this->load('CREATE_DATE', 'DESC', $maxReviews);
     }
 
     /**
