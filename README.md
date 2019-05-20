@@ -12,7 +12,7 @@ composer install kingscode/php-klanten-vertellen-api
 
 ## Usage
 
-(!) Before you get started, make sure you already have a `token` and `location id` from the 
+:warning: Before you get started, make sure you already have a `token` and `location id` from the 
 KlantenVertellen website.
 
 
