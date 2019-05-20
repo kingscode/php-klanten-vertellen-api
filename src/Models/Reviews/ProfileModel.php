@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KingsCode\KlantenVertellen\Models\Reviews;
 
 use KingsCode\KlantenVertellen\Models\Model;
@@ -21,6 +23,7 @@ class ProfileModel extends Model
     public function __construct(array $data, array $reviews)
     {
         parent::__construct($data);
+
         $this->reviews = $reviews;
     }
 

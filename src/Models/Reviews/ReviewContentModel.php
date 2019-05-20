@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KingsCode\KlantenVertellen\Models\Reviews;
 
 use KingsCode\KlantenVertellen\Models\Model;
 
 class ReviewContentModel extends Model
 {
-
     /**
      * @return string
      */

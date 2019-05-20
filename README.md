@@ -7,7 +7,7 @@ The goal of this package is to make it easy to communicate with the KlantenVerte
 ## Installation
 
 ```text
-    composer install kingscode/php-klanten-vertellen-api
+composer install kingscode/php-klanten-vertellen-api
 ```
 
 ## Usage
@@ -29,23 +29,22 @@ The ID to your review page can be found in the link on the same page as the toke
 
 To get started you need to create a `KlantenVertellenWrapper` object, like so:
 ```php
-    //Repository ctor: (token, locationId, locale)
-    $repository = new Repository('XXXX-XXXX-XXXX-XXXX', 1234567, 'nl');
-    $wrapper = new KlantenVertellenWrapper(new GetReviews($repository), new ReviewInvite($repository));
+$repository = new Repository('YOUR-TOKEN-HERE', 1234, 'nl');
+$wrapper = new KlantenVertellenWrapper(new GetReviews($repository), new ReviewInvite($repository));
 ```
 
 #### Getting reviews
 ```php
-    //This will return 50 latest reviews that got posted on your page
-    $reviews = $wrapper->reviews()->getReviews(50);
-    
-    //This will return the 25 worst reviews that got posted on your page
-    $worstReviews = $wrapper->reviews()->getWorstReviews();
+//This will return 50 latest reviews that got posted on your page
+$reviews = $wrapper->reviews()->getReviews(50);
+   
+//This will return the 25 worst reviews that got posted on your page
+$worstReviews = $wrapper->reviews()->getWorstReviews();
 ```
 
 #### Sending review invites
 ```php
-    //You can only send an invite to the same address every 30 days
-    $wrapper->inviter()->sendInvite('info@mail.com', 'First name', 'Last name');
+//You can only send an invite to the same address every 30 days
+$wrapper->inviter()->sendInvite('info@mail.com', 'First name', 'Last name');
 ```
 

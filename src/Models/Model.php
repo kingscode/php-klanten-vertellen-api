@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KingsCode\KlantenVertellen\Models;
 
-class Model
+abstract class Model
 {
     /**
      * @var array $properties

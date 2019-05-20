@@ -4,7 +4,6 @@ namespace KingsCode\KlantenVertellen;
 
 use KingsCode\KlantenVertellen\API\GetReviews;
 use KingsCode\KlantenVertellen\API\ReviewInvite;
-use KingsCode\KlantenVertellen\Config\Repository;
 
 class KlantenVertellenWrapper
 {
@@ -26,8 +25,8 @@ class KlantenVertellenWrapper
      */
     public function __construct(GetReviews $reviewGetter, ReviewInvite $reviewInviter)
     {
-        $this->reviewGetter = $reviewGetter;//new GetReviews($repository);
-        $this->reviewInviter = $reviewInviter;//new ReviewInvite($repository);
+        $this->reviewGetter = $reviewGetter;
+        $this->reviewInviter = $reviewInviter;
     }
 
     /**

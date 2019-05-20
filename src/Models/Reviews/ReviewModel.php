@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KingsCode\KlantenVertellen\Models\Reviews;
 
 use KingsCode\KlantenVertellen\Models\Model;
@@ -11,13 +13,17 @@ class ReviewModel extends Model
      */
     private $reviewContent;
 
-    public function __construct(array $data)
+    /**
+     * ReviewModel constructor.
+     *
+     * @param  array $data
+     * @param  array $reviewContent
+     */
+    public function __construct(array $data, array $reviewContent)
     {
         parent::__construct($data);
 
-        $this->reviewContent = array_map(function($reviewContent) {
-            return new ReviewContentModel($reviewContent);
-        }, $data['reviewContent']);
+        $this->reviewContent = $reviewContent;
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace KingsCode\KlantenVertellen\Config;
 
 class Repository
@@ -42,9 +44,9 @@ class Repository
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getLocationId(): string
+    public function getLocationId(): int
     {
         return $this->locationId;
     }
