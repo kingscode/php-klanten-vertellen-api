@@ -1,16 +1,16 @@
-#php-klanten-vertellen-api
+# php-klanten-vertellen-api
 A PHP implementation of the klantenvertellen.nl Api.
 
 This is a PHP package which you can import in any of your PHP projects. 
 The goal of this package is to make it easy to communicate with the KlantenVertellen api with just a few function calls.
 
-##Installation
+## Installation
 
 ```text
     composer install kingscode/php-klanten-vertellen-api
 ```
 
-##Usage
+## Usage
 
 (!) Before you get started, make sure you already have a `token` and `location id` from the 
 KlantenVertellen website.
@@ -34,7 +34,7 @@ To get started you need to create a `KlantenVertellenWrapper` object, like so:
     $wrapper = new KlantenVertellenWrapper(new GetReviews($repository), new ReviewInvite($repository));
 ```
 
-####Getting reviews
+#### Getting reviews
 ```php
     //This will return 50 latest reviews that got posted on your page
     $reviews = $wrapper->reviews()->getReviews(50);
@@ -43,7 +43,7 @@ To get started you need to create a `KlantenVertellenWrapper` object, like so:
     $worstReviews = $wrapper->reviews()->getWorstReviews();
 ```
 
-####Sending review invites
+#### Sending review invites
 ```php
     //You can only send an invite to the same address every 30 days
     $wrapper->inviter()->sendInvite('info@mail.com', 'First name', 'Last name');
