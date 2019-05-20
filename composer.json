@@ -1,5 +1,5 @@
 {
-    "name": "kingscode/klanten-vertellen-api",
+    "name": "kingscode/php-klanten-vertellen-api",
     "description": "This is a wrapper which makes it easy to retrieve and post data to the Klanten Vertellen website",
     "type": "library",
     "require": {
