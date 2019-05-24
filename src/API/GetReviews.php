@@ -113,10 +113,10 @@ class GetReviews
      */
     private function mapIntoModels(array $data): ProfileModel
     {
-        $reviewModels = array_map(function ($review) use ($data) {
+        $reviewModels = array_map(function ($review) {
             $reviewContent = array_map(function ($reviewContent) {
                 return new ReviewContentModel($reviewContent);
-            }, $data['reviewContent']);
+            }, $review['reviewContent']);
 
             return new ReviewModel($review, $reviewContent);
         }, $data['reviews']);
