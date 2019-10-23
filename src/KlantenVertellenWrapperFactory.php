@@ -9,7 +9,7 @@ class KlantenVertellenWrapperFactory
 
     public function create($token, $locationId, $locale)
     {
-        $repository = new Repository('YOUR-TOKEN-HERE', 1234, 'nl');
+        $repository = new Repository($token, $locationId, $locale);
         return new KlantenVertellenWrapper(new GetReviews($repository), new ReviewInvite($repository));
     }
 
