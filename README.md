@@ -7,7 +7,7 @@ The goal of this package is to make it easy to communicate with the KlantenVerte
 ## Installation
 
 ```text
-composer install kingscode/php-klanten-vertellen-api
+composer require kingscode/php-klanten-vertellen-api
 ```
 
 ## Usage
