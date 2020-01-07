@@ -37,9 +37,17 @@ class ReviewModel extends Model
     /**
      * @return string
      */
+    public function getReviewId(): string
+    {
+        return $this->reviewId;
+    }
+
+    /**
+     * @return string
+     */
     public function getAuthor(): string
     {
-        return $this->author;
+        return $this->reviewAuthor;
     }
 
     /**
@@ -48,6 +56,14 @@ class ReviewModel extends Model
     public function getCity(): string
     {
         return $this->city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReferenceCode(): string
+    {
+        return $this->referenceCode;
     }
 
     /**
