@@ -47,4 +47,3 @@ $worstReviews = $wrapper->reviews()->getWorstReviews();
 //You can only send an invite to the same address every 30 days
 $wrapper->inviter()->sendInvite('info@mail.com', 'First name', 'Last name');
 ```
-

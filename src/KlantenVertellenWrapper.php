@@ -45,4 +45,3 @@ class KlantenVertellenWrapper
         return $this->reviewInviter;
     }
 }
-

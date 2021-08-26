@@ -124,4 +124,3 @@ class GetReviews
         return new ProfileModel($data, $reviewModels);
     }
 }
-
