@@ -6,24 +6,10 @@ namespace KingsCode\KlantenVertellen\Models;
 
 abstract class Model
 {
-    /**
-     * @var array $properties
-     */
-    private $properties;
-
-    /**
-     * Review constructor.
-     *
-     * @param  mixed $data
-     */
-    public function __construct(array $data)
+    public function __construct(private array $properties)
     {
-        $this->properties = $data;
     }
 
-    /**
-     * @return mixed
-     */
     public function __get($name)
     {
         return $this->properties[$name];

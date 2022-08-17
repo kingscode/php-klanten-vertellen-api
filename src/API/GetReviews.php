@@ -13,60 +13,29 @@ use function array_map;
 class GetReviews
 {
     /**
-     * @var \KingsCode\KlantenVertellen\Config\Repository
-     */
-    private $config;
-
-    /**
      * This is the address of where the api calls go to (exclusive for review invites).
-     *
-     * @var string $url
      */
-    public static $url = 'https://www.klantenvertellen.nl/v1/publication/review/external';
+    public static string $url = 'https://www.klantenvertellen.nl/v1/publication/review/external';
 
-    /**
-     * GetReviews constructor.
-     *
-     * @param  \KingsCode\KlantenVertellen\Config\Repository $repository
-     */
-    public function __construct(Repository $repository)
+    public function __construct(private Repository $config)
     {
-        $this->config = $repository;
     }
 
-    /**
-     * @param  int $maxReviews
-     * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
-     */
     public function getReviews(int $maxReviews = 25): ProfileModel
     {
         return $this->load('CREATE_DATE', 'DESC', $maxReviews);
     }
 
-    /**
-     * @param  int $maxReviews
-     * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
-     */
     public function getBestReviews(int $maxReviews = 25): ProfileModel
     {
         return $this->load('RATING', 'DESC', $maxReviews);
     }
 
-    /**
-     * @param  int $maxReviews
-     * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
-     */
     public function getWorstReviews(int $maxReviews = 25): ProfileModel
     {
         return $this->load('RATING', 'ASC', $maxReviews);
     }
 
-    /**
-     * @param  string $orderBy
-     * @param  string $sortOrder
-     * @param  int    $maxReviews
-     * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
-     */
     public function rawQueryReviews(string $orderBy, string $sortOrder, int $maxReviews = 25): ProfileModel
     {
         return $this->load($orderBy, $sortOrder, $maxReviews);
@@ -74,11 +43,6 @@ class GetReviews
 
     /**
      * This will load the given reviews. If maxReviews is not set, it will return 25 reviews if available.
-     *
-     * @param  string $orderBy
-     * @param  string $sortOrder
-     * @param  int    $maxReviews
-     * @return ProfileModel
      */
     private function load(string $orderBy, string $sortOrder, int $maxReviews): ProfileModel
     {
@@ -107,10 +71,6 @@ class GetReviews
         return $this->mapIntoModels($data);
     }
 
-    /**
-     * @param  array $data
-     * @return \KingsCode\KlantenVertellen\Models\Reviews\ProfileModel
-     */
     private function mapIntoModels(array $data): ProfileModel
     {
         $reviewModels = array_map(function ($review) {
@@ -124,4 +84,3 @@ class GetReviews
         return new ProfileModel($data, $reviewModels);
     }
 }
-

@@ -9,35 +9,14 @@ use KingsCode\KlantenVertellen\Config\Repository;
 class ReviewInvite
 {
     /**
-     * @var \KingsCode\KlantenVertellen\Config\Repository
-     */
-    private $config;
-
-    /**
      * This is the address of where the api calls go to (exclusive for review invites).
-     *
-     * @var string $url
      */
-    public static $url = 'https://www.klantenvertellen.nl/v1/invite/external';
+    public static string $url = 'https://www.klantenvertellen.nl/v1/invite/external';
 
-    /**
-     * ReviewInvite constructor.
-     *
-     * @param  \KingsCode\KlantenVertellen\Config\Repository $repository
-     */
-    public function __construct(Repository $repository)
+    public function __construct(private Repository $config)
     {
-        $this->config = $repository;
     }
 
-    /**
-     * @param  string $email
-     * @param  string $firstName
-     * @param  string $lastName
-     * @param  int    $delay
-     * @param  int    $refCode
-     * @return bool
-     */
     public function sendInvite(string $email, string $firstName, string $lastName, int $delay = 0, int $refCode = 0): bool
     {
         $curl = curl_init(ReviewInvite::$url);
