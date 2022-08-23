@@ -10,21 +10,14 @@ class ProfileModel extends Model
 {
 
     /**
-     * @var array|\KingsCode\KlantenVertellen\Models\Reviews\ReviewModel[] $reviews
-     */
-    private $reviews;
-
-    /**
      * ProfileModel constructor.
      *
      * @param  array                                                    $data
      * @param  \KingsCode\KlantenVertellen\Models\Reviews\ReviewModel[] $reviews
      */
-    public function __construct(array $data, array $reviews)
+    public function __construct(array $data,private array $reviews)
     {
         parent::__construct($data);
-
-        $this->reviews = $reviews;
     }
 
     /**

@@ -12,26 +12,21 @@ use function array_map;
 
 class GetReviews
 {
-    /**
-     * @var \KingsCode\KlantenVertellen\Config\Repository
-     */
-    private $config;
 
     /**
      * This is the address of where the api calls go to (exclusive for review invites).
      *
      * @var string $url
      */
-    public static $url = 'https://www.klantenvertellen.nl/v1/publication/review/external';
+    public static string $url = 'https://www.klantenvertellen.nl/v1/publication/review/external';
 
     /**
      * GetReviews constructor.
      *
-     * @param  \KingsCode\KlantenVertellen\Config\Repository $repository
+     * @param  \KingsCode\KlantenVertellen\Config\Repository $config
      */
-    public function __construct(Repository $repository)
+    public function __construct(private Repository $config)
     {
-        $this->config = $repository;
     }
 
     /**
