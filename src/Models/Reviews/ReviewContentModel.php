@@ -13,7 +13,7 @@ class ReviewContentModel extends Model
      */
     public function getAnswerToQuestion(): string
     {
-        return $this->rating;
+        return $this->answerToQuestion;
     }
 
     /**

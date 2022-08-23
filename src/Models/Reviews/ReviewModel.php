@@ -8,22 +8,16 @@ use KingsCode\KlantenVertellen\Models\Model;
 
 class ReviewModel extends Model
 {
-    /**
-     * @var \KingsCode\KlantenVertellen\Models\Reviews\ReviewContentModel[] $reviewContent
-     */
-    private $reviewContent;
 
     /**
      * ReviewModel constructor.
      *
-     * @param  array $data
-     * @param  array $reviewContent
+     * @param  array                                                           $data
+     * @param  \KingsCode\KlantenVertellen\Models\Reviews\ReviewContentModel[] $reviewContent
      */
-    public function __construct(array $data, array $reviewContent)
+    public function __construct(array $data, private array $reviewContent)
     {
         parent::__construct($data);
-
-        $this->reviewContent = $reviewContent;
     }
 
     /**

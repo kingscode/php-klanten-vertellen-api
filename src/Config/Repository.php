@@ -6,20 +6,6 @@ namespace KingsCode\KlantenVertellen\Config;
 
 class Repository
 {
-    /**
-     * @var string $token
-     */
-    private $token;
-
-    /**
-     * @var int $locationId
-     */
-    private $locationId;
-
-    /**
-     * @var string $locale
-     */
-    private $locale;
 
     /**
      * Repository constructor.
@@ -28,11 +14,11 @@ class Repository
      * @param  int    $locationId
      * @param  string $locale
      */
-    public function __construct(string $token, int $locationId, string $locale)
-    {
-        $this->token = $token;
-        $this->locationId = $locationId;
-        $this->locale = $locale;
+    public function __construct(
+        private string $token,
+        private int $locationId,
+        private string $locale
+    ) {
     }
 
     /**

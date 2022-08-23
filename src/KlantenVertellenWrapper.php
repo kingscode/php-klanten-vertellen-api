@@ -7,15 +7,6 @@ use KingsCode\KlantenVertellen\API\ReviewInvite;
 
 class KlantenVertellenWrapper
 {
-    /**
-     * @var \KingsCode\KlantenVertellen\API\GetReviews $reviewGetter
-     */
-    protected $reviewGetter;
-
-    /**
-     * @var \KingsCode\KlantenVertellen\API\ReviewInvite $reviewInviter
-     */
-    protected $reviewInviter;
 
     /**
      * ApiWrapper constructor.
@@ -23,10 +14,8 @@ class KlantenVertellenWrapper
      * @param  \KingsCode\KlantenVertellen\API\GetReviews   $reviewGetter
      * @param  \KingsCode\KlantenVertellen\API\ReviewInvite $reviewInviter
      */
-    public function __construct(GetReviews $reviewGetter, ReviewInvite $reviewInviter)
+    public function __construct(protected GetReviews $reviewGetter,protected ReviewInvite $reviewInviter)
     {
-        $this->reviewGetter = $reviewGetter;
-        $this->reviewInviter = $reviewInviter;
     }
 
     /**
